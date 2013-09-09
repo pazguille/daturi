@@ -152,3 +152,9 @@ footer {
     width: 149px;
     height: 149px;
 }
+
+#twitter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
