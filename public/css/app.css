@@ -5,16 +5,38 @@ body {
     margin: 2em auto;
 }
 
+a {
+    color: #0637B3;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #005580;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
 .logo {
     font-size: 3em;
     line-height: 1em;
     font-weight: bold;
     margin: 0;
     text-align: center;
-    text-decoration: none;
     display: block;
     color: #333;
+    text-decoration: none;
     font-family: 'Pacifico', cursive;
+}
+
+.logo,
+.logo:visited,
+.logo:hover,
+.logo:focus {
+    color: #333;
+    text-decoration: none;
 }
 
 section {
