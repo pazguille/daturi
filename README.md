@@ -1,6 +1,6 @@
 # Daturi
 
-An App to Converts images to Base64 - http://daturi.me/
+An app to convert images to Base64 - http://daturi.me/
 
 ## Contact
 - Guillermo Paz (Frontend developer - JavaScript developer | Web standards lover)
