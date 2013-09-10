@@ -1,4 +1,4 @@
-require "./lib/img"
+require "./models/img"
 
 # Defines routes
 get "/" do

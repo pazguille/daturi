@@ -1,12 +1,11 @@
 <ul id="results">
     <% locals[:results].each do |img| %>
-    <% uri = "data:" + img.type + ";base64," + img.toURI %>
     <li class="result-box">
         <figure class="result-preview">
-            <img src="<%= uri %>" width="250">
+            <img src="<%= img.base64 %>" width="250">
             <figcaption><%= img.name %> - (<%= img.size %>Kb)</figcaption>
         </figure>
-        <textarea class="result-code" readonly><%= uri %></textarea>
+        <textarea class="result-code" readonly><%= img.base64 %></textarea>
     </li>
     <% end %>
 </ul>

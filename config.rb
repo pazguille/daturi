@@ -1,5 +1,4 @@
 # Configuration
-# set :environment, :production
 set :rdoc, :layout_engine => :erb
 
 configure :production do
