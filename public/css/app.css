@@ -50,34 +50,9 @@ form {
     text-align: center;
 }
 
-.uploader {
-    background: rgba(255,255,255, .5);
+.upfile {
+    background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #FFF;
-    cursor: pointer;
-    opacity: 1;
-    font-size: 2em;
-    line-height: 2em;
-    width: 412px;
-    height: 224px;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-}
-
-.uploader-label {
-    color: #FFF;
-    text-shadow: 0 -1px #666;
-    line-height: 7em;
-}
-
-.uploader-file {
-    cursor: pointer;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    font-size: 6em;
-    opacity: 0;
 }
 
 /*.uploader-url {
