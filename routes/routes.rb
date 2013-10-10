@@ -1,10 +1,13 @@
 require "./models/img"
 
 # Defines routes
+
+# Home
 get "/" do
   erb :index
 end
 
+# Converted
 post "/" do
   images = params[:images]
   @imgs = []
