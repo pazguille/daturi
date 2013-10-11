@@ -155,3 +155,7 @@ footer {
     top: 20px;
     left: 20px;
 }
+
+.upfile-label {
+    line-height: 230px;
+}
