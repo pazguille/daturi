@@ -42,7 +42,7 @@ window.onload = function () {
             }
 
             var req = new XMLHttpRequest();
-            req.open('POST', 'http://localhost:8080/');
+            req.open('POST', form.action);
             req.setRequestHeader('X-Requested-With','XMLHttpRequest');
             req.onreadystatechange = function () {
                 var status;
