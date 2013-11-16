@@ -29,14 +29,7 @@
         </footer>
         <script src="/js/upfile.min.js" async></script>
         <script>
-            window.onload = function () {
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-15753373-11', 'daturi.me');
-            ga('send', 'pageview');
-            new Upfile(document.querySelector('.upfile-button'));}
+            window.onload=function(){!function(a,b,c,d,e,f,g){a.GoogleAnalyticsObject=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=1*new Date,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-15753373-11","daturi.me"),ga("send","pageview");var d,a=new Upfile(document.querySelector(".upfile-button")),b=document.getElementsByTagName("form")[0],c=!1;a.container.addEventListener("dragenter",function(a){a.preventDefault()},!1),a.container.addEventListener("dragover",function(a){a.preventDefault()},!1),a.container.addEventListener("drop",function(b){b.stopPropagation(),b.preventDefault(),d=b.target.files||b.dataTransfer.files,a._updateList(d),c=!0},!1),a.container.addEventListener("dragleave",function(){console.log("leave")},!1),b.addEventListener("submit",function(a){if(document.querySelector("#submit").setAttribute("disabled","disabled"),c){a.stopPropagation(),a.preventDefault();for(var g,e=new FormData,f=0;g=d[f];++f)e.append("images[]",g);var h=new XMLHttpRequest;h.open("POST","http://localhost:8080/"),h.setRequestHeader("X-Requested-With","XMLHttpRequest"),h.onreadystatechange=function(){var a;h.readyState===h.DONE&&(a=h.status,(a>=200&&300>a||304===a||0===a)&&(b.insertAdjacentHTML("afterend",h.response),b.setAttribute("hidden","hidden")))},h.send(e)}})};
         </script>
     </body>
 </html>

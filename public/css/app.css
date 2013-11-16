@@ -84,6 +84,14 @@ form {
     background-color: #c0392b;
 }
 
+#submit:disabled {
+    background-image: none;
+    background-color: #F9F9F9;
+    text-shadow: none;
+    color: #BBB;
+    cursor: not-allowed;
+}
+
 #results {
     list-style: none;
     padding: 2.5em 0;
@@ -121,6 +129,8 @@ form {
     bottom: 0;
     line-height: 1.5em;
     font-size: .8em;
+    width: 74%;
+    height: 90%;
 }
 
 .result a {
