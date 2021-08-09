@@ -1,12 +1,13 @@
 # Daturi
 
-An app to convert images to Base64 - https://daturi.me/
+> An app to convert images to Base64 - https://daturi.me/
 
-## Contact
-- Guillermo Paz (Frontend developer - JavaScript developer | Web standards lover)
+## Made with ❤ by
+
+- Guille Paz (👨‍💻 Front End Web Developer | ⚡️ Web Performance Lover)
 - E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
 - Twitter: [@pazguille](https://twitter.com/pazguille)
-- Web: [http://pazguille.me](https://pazguille.me)
+- Web: [https://pazguille.me](https://pazguille.me)
 
 ## License
-Copyright (c) 2013 [@pazguille](https://twitter.com/pazguille) Licensed under the MIT license.
+MIT license. Copyright © 2020.
