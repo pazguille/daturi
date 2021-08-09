@@ -23,6 +23,7 @@ GEM
 
 PLATFORMS
   universal-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   data-uri
