@@ -30,7 +30,7 @@ DEPENDENCIES
   thin
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.6.8
 
 BUNDLED WITH
    2.2.25
