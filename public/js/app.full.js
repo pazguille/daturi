@@ -5,59 +5,86 @@ window.onload = function () {
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-15753373-11', 'daturi.me');
     ga('send', 'pageview');
-    var up = new Upfile(document.querySelector('.upfile-button')),
-        form = document.getElementsByTagName('form')[0],
-        drop = false,
-        files;
 
-    up.container.addEventListener('dragenter', function (eve) {
-        eve.preventDefault();
-    }, false);
 
-    up.container.addEventListener('dragover', function (eve) {
-        eve.preventDefault();
-    }, false);
+    try {
+        if (!('clipboard' in navigator)) {
+         return;
+        }
 
-    up.container.addEventListener('drop', function (eve) {
-        eve.stopPropagation();
-        eve.preventDefault();
-        files = eve.target.files || eve.dataTransfer.files
-        up._updateList(files);
-        drop = true;
-    }, false);
+        var $results = document.querySelector('#results');
 
-    up.container.addEventListener('dragleave', function (eve) {
-        console.log('leave');
-    }, false);
+        $results.addEventListener('click', function (eve) {
+            if (eve.target.nodeName === 'BUTTON') {
+                var text = document.querySelector('#' + eve.target.dataset.id).value;
+                navigator.clipboard.writeText(text).then(() => {
+                    eve.target.querySelector('span').firstChild.data = 'Copied ✓';
+                    setTimeout(() => {
+                        eve.target.querySelector('span').firstChild.data = 'Copy';
+                    }, 1000);
+                });
+            }
+        }, false);
+    } catch(err) {
+        console.log(err);
+    }
 
-    form.addEventListener('submit', function (eve) {
-        document.querySelector('#submit').setAttribute('disabled', 'disabled');
+    try {
+        var $upButton = document.querySelector('.upfile-button');
+        var up = new Upfile($upButton),
+            form = document.getElementsByTagName('form')[0],
+            drop = false,
+            files;
 
-        if (drop) {
+        up.container.addEventListener('dragenter', function (eve) {
+            eve.preventDefault();
+        }, false);
+
+        up.container.addEventListener('dragover', function (eve) {
+            eve.preventDefault();
+        }, false);
+
+        up.container.addEventListener('drop', function (eve) {
             eve.stopPropagation();
             eve.preventDefault();
-            var formData = new FormData();
-            for (var i = 0, file; file = files[i]; ++i) {
-                formData.append('images[]', file);
-            }
+            files = eve.target.files || eve.dataTransfer.files
+            up._updateList(files);
+            drop = true;
+        }, false);
 
-            var req = new XMLHttpRequest();
-            req.open('POST', form.action);
-            req.setRequestHeader('X-Requested-With','XMLHttpRequest');
-            req.onreadystatechange = function () {
-                var status;
+        up.container.addEventListener('dragleave', function (eve) {
+            console.log('leave');
+        }, false);
 
-                if (req.readyState === req.DONE) {
-                    status = req.status;
-                    if ((status >= 200 && status < 300) || status === 304 || status === 0) {
-                        form.insertAdjacentHTML('afterend', req.response);
-                        form.setAttribute('hidden', 'hidden');
-                    }
+        form.addEventListener('submit', function (eve) {
+            document.querySelector('#submit').setAttribute('disabled', 'disabled');
+
+            if (drop) {
+                eve.stopPropagation();
+                eve.preventDefault();
+                var formData = new FormData();
+                for (var i = 0, file; file = files[i]; ++i) {
+                    formData.append('images[]', file);
                 }
 
-            };
+                var req = new XMLHttpRequest();
+                req.open('POST', form.action);
+                req.setRequestHeader('X-Requested-With','XMLHttpRequest');
+                req.onreadystatechange = function () {
+                    var status;
 
-            req.send(formData);
-        }
-    });
+                    if (req.readyState === req.DONE) {
+                        status = req.status;
+                        if ((status >= 200 && status < 300) || status === 304 || status === 0) {
+                            form.insertAdjacentHTML('afterend', req.response);
+                            form.setAttribute('hidden', 'hidden');
+                        }
+                    }
+
+                };
+
+                req.send(formData);
+            }
+        });
+    } catch {}
 };
