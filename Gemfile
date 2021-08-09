@@ -1,4 +1,5 @@
 source "http://rubygems.org/"
+ruby "2.3.1"
 gem "sinatra"
 gem "data-uri"
 gem "thin"
