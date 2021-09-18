@@ -1,6 +1,6 @@
 # Daturi
 
-> An app to convert images to Base64 - https://daturi.me/
+> An app to convert images to Base64 - https://daturi.pazguille.me/
 
 ## Made with ❤ by
 
