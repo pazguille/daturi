@@ -2,12 +2,12 @@
 
 > An app to convert images to Base64 - https://daturi.pazguille.me/
 
-## Made with ❤ by
+### Usage
 
-- Guille Paz (👨‍💻 Front End Web Developer | ⚡️ Web Performance Lover)
-- E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
-- Twitter: [@pazguille](https://twitter.com/pazguille)
-- Web: [https://pazguille.me](https://pazguille.me)
+Start the project:
 
-## License
-MIT license. Copyright © 2020.
+```
+deno task start
+```
+
+This will watch the project directory and restart as necessary.
