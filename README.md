@@ -1,4 +1,6 @@
-# fresh project
+# Daturi
+
+> An app to convert images to Base64 - https://daturi.pazguille.me/
 
 ### Usage
 
