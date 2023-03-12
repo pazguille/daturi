@@ -1,13 +1,11 @@
-# Daturi
+# fresh project
 
-> An app to convert images to Base64 - https://daturi.me/
+### Usage
 
-## Made with ❤ by
+Start the project:
 
-- Guille Paz (👨‍💻 Front End Web Developer | ⚡️ Web Performance Lover)
-- E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
-- Twitter: [@pazguille](https://twitter.com/pazguille)
-- Web: [https://pazguille.me](https://pazguille.me)
+```
+deno task start
+```
 
-## License
-MIT license. Copyright © 2020.
+This will watch the project directory and restart as necessary.
