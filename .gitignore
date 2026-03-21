@@ -17,3 +17,5 @@ tmp
 _yardoc
 doc/
 .DS_Store
+_fresh/
+.vscode/

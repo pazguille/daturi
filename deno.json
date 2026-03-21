@@ -1,8 +1,18 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/,componennts/,islands/ dev.ts"
+    "dev": "deno run -A --watch=static/,routes/,components/,islands/ dev.ts",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts",
+    "start": "deno run -A main.ts"
   },
-  "importMap": "./import_map.json",
+  "imports": {
+    "@/": "./",
+    "$fresh/": "https://deno.land/x/fresh@1.7.0/",
+    "preact": "npm:preact@10.19.6",
+    "preact-render-to-string": "npm:preact-render-to-string@6.3.1",
+    "@preact/signals": "npm:@preact/signals@1.2.2",
+    "@preact/signals-core": "npm:@preact/signals-core@1.5.1"
+  },
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
